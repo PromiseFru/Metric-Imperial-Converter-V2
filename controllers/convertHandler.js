@@ -9,7 +9,8 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
+    var firstCharIndex = input.match('[a-zA-Z]').index;
+    var result = eval(input.slice(0, firstCharIndex));
     
     return result;
   };
