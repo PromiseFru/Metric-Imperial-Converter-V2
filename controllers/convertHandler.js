@@ -10,9 +10,15 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var firstCharIndex = input.match('[a-zA-Z]').index;
-    var result = eval(input.slice(0, firstCharIndex));
+    var result = input.slice(0, firstCharIndex);
     
-    return result;
+    if(!result) return result = 1;
+    if(result.match(/\d+\/\d+\/\d+/)){
+      console.log("invalid number");
+      throw new Error('invalid number');
+    }
+
+    return eval(result);
   };
   
   this.getUnit = function(input) {

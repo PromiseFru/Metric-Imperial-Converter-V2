@@ -35,14 +35,15 @@ suite('Unit Tests', function(){
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      var input = "0.5/2L";
+      var input = '0.5/2L';
       assert.equal(convertHandler.getNum(input), 0.25);
       done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
+      var input = '1/2/1L';
+      assert.throws(convertHandler.getNum.bind(convertHandler.getNum, input), 'invalid number');
+      done();
     });
     
     test('No Numerical Input', function(done) {
