@@ -29,14 +29,15 @@ suite('Unit Tests', function(){
     });
     
     test('Fractional Input', function(done) {
-      var input = 1/2;
+      var input = '1/2';
       assert.equal(convertHandler.getNum(input), 0.5);
       done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
+      var input = "0.5/2";
+      assert.equal(convertHandler(input), 0.25);
+      done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
