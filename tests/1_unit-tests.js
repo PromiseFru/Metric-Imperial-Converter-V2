@@ -47,8 +47,9 @@ suite('Unit Tests', function(){
     });
     
     test('No Numerical Input', function(done) {
-      
-      //done();
+      var input = 'gal';
+      assert.equal(convertHandler.getNum(input), 1);
+      done();
     }); 
     
   });
