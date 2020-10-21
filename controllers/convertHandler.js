@@ -22,7 +22,8 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    var result;
+    var firstCharIndex = input.match('[a-zA-Z]').index;
+    var result = input.slice(firstCharIndex);
     
     return result;
   };
