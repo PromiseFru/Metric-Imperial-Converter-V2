@@ -13,12 +13,11 @@ function ConvertHandler() {
     var result = input.slice(0, firstCharIndex);
     
     if(!result) return result = 1;
-    if(result.match(/\d+\/\d+\/\d+/)){
-      console.log("invalid number");
-      throw new Error('invalid number');
+    if(result.match(/\/{2}/)){
+      return result = 'invalid number';
+    }else{
+      return eval(result);
     }
-
-    return eval(result);
   };
   
   this.getUnit = function(input) {

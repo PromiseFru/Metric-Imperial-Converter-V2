@@ -41,8 +41,8 @@ suite('Unit Tests', function(){
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      var input = '1/2/1L';
-      assert.throws(convertHandler.getNum.bind(convertHandler.getNum, input), 'invalid number');
+      var input = '1.2//1L';
+      assert.equal(convertHandler.getNum(input), 'invalid number');
       done();
     });
     
