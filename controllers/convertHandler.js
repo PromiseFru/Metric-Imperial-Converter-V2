@@ -34,7 +34,11 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
-    var result;
+    var checkUnit = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+    var returnunit = ['l','gal','km','mi','kg','lbs','L','GAL','KM','MI','KG','LBS'];
+    var unit = this.getUnit(initUnit);
+    var initUnitIndex = checkUnit.indexOf(unit);
+    var result = returnunit[initUnitIndex];
     
     return result;
   };
