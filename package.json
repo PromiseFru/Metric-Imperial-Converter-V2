@@ -9,7 +9,7 @@
 	"scripts": {
 		"start": "node server.js",
 		"devstart": "nodemon server.js",
-		"teststart": "NODE_ENV=test node server.js"
+		"teststart": "NODE_ENV=test nodemon server.js"
 	},
 	"dependencies": {
 		"express": "^4.14.0",

@@ -58,15 +58,16 @@ suite('Unit Tests', function(){
     
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
-      input.forEach(function(ele) {
-        assert.equal(convertHandler.getUnit(ele), ele);
+      input.forEach(function(ele, i) {
+        assert.equal(convertHandler.getUnit(ele), input[i]);
       });
       done();
     });
     
     test('Unknown Unit Input', function(done) {
-      
-      //done();
+      var input = "li";
+      assert.equal(convertHandler.getUnit(input), 'invalid unit');
+      done();
     });  
     
   });

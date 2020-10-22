@@ -23,9 +23,15 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var firstCharIndex = input.match('[a-zA-Z]').index;
-    var result = input.slice(firstCharIndex);
-    
-    return result;
+    var result = input.slice(firstCharIndex)
+    var checkUnit = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+
+    var unitIndex = checkUnit.indexOf(result);
+    if(unitIndex >= 0){
+      return result;
+    }else{
+      return result = "invalid unit";
+    }
   };
   
   this.getReturnUnit = function(initUnit) {
