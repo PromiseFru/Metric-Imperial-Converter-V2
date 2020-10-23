@@ -81,6 +81,18 @@ function ConvertHandler() {
         return result;
         break;
       }
+      case('lbs'||'LBS'):{
+        var solver = initNum * lbsToKg;
+        var result = solver;
+        return result;
+        break;
+      }
+      case('kg'||'KG'):{
+        var solver = initNum / lbsToKg;
+        var result = solver;
+        return result;
+        break;
+      }
     }
   };
   
