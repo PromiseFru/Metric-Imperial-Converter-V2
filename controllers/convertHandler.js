@@ -69,6 +69,18 @@ function ConvertHandler() {
         return result;
         break;
       }
+      case('mi'||'MI'):{
+        var solver = initNum * miToKm;
+        var result = solver;
+        return result;
+        break;
+      }
+      case('km'||'KM'):{
+        var solver = initNum / miToKm;
+        var result = solver;
+        return result;
+        break;
+      }
     }
   };
   
