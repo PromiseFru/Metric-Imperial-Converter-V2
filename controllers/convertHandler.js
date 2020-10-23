@@ -55,9 +55,21 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    var result;
-    
-    return result;
+
+    switch(initUnit){
+      case('gal'||'GAL'):{
+        var solver = initNum * galToL;
+        var result = solver;
+        return result;
+        break;
+      }
+      case('l'||'L'):{
+        var solver = galToL / initNum;
+        var result = solver;
+        return result;
+        break;
+      }
+    }
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
