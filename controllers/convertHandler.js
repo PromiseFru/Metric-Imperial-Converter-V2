@@ -64,7 +64,7 @@ function ConvertHandler() {
         break;
       }
       case('l'||'L'):{
-        var solver = galToL / initNum;
+        var solver = initNum / galToL;
         var result = solver;
         return result;
         break;
