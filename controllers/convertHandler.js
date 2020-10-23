@@ -22,8 +22,8 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var firstCharIndex = input.match('[a-zA-Z]').index;
-    var result = input.slice(firstCharIndex)
-    var checkUnit = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+    var result = input.slice(firstCharIndex).toLowerCase();
+    var checkUnit = ['gal','l','mi','km','lbs','kg'];
 
     var unitIndex = checkUnit.indexOf(result);
     if(unitIndex >= 0){
@@ -34,8 +34,8 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
-    var checkUnit = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
-    var returnunit = ['l','gal','km','mi','kg','lbs','L','GAL','KM','MI','KG','LBS'];
+    var checkUnit = ['gal','l','mi','km','lbs','kg'];
+    var returnunit = ['l','gal','km','mi','kg','lbs'];
     var initUnitIndex = checkUnit.indexOf(initUnit);
     var result = returnunit[initUnitIndex];
     
@@ -43,8 +43,8 @@ function ConvertHandler() {
   };
 
   this.spellOutUnit = function(unit) {
-    var checkUnit = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
-    var spellUnit = ['gallons','liters','miles','kilometers','pounds','kilograms','gallons','liters','miles','kilometers','pounds','kilograms'];
+    var checkUnit = ['gal','l','mi','km','lbs','kg'];
+    var spellUnit = ['gallons','liters','miles','kilometers','pounds','kilograms'];
     var unitIndex = checkUnit.indexOf(unit);
     var result = spellUnit[unitIndex];
     
@@ -57,37 +57,37 @@ function ConvertHandler() {
     const miToKm = 1.60934;
 
     switch(initUnit){
-      case('gal'||'GAL'):{
+      case('gal'):{
         var solver = initNum * galToL;
         var result = solver;
         return result;
         break;
       }
-      case('l'||'L'):{
+      case('l'):{
         var solver = initNum / galToL;
         var result = solver;
         return result;
         break;
       }
-      case('mi'||'MI'):{
+      case('mi'):{
         var solver = initNum * miToKm;
         var result = solver;
         return result;
         break;
       }
-      case('km'||'KM'):{
+      case('km'):{
         var solver = initNum / miToKm;
         var result = solver;
         return result;
         break;
       }
-      case('lbs'||'LBS'):{
+      case('lbs'):{
         var solver = initNum * lbsToKg;
         var result = solver;
         return result;
         break;
       }
-      case('kg'||'KG'):{
+      case('kg'):{
         var solver = initNum / lbsToKg;
         var result = solver;
         return result;
