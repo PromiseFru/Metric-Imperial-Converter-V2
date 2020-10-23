@@ -43,7 +43,10 @@ function ConvertHandler() {
   };
 
   this.spellOutUnit = function(unit) {
-    var result;
+    var checkUnit = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+    var spellUnit = ['gallons','liters','miles','kilometers','pounds','kilograms','gallons','liters','miles','kilometers','pounds','kilograms'];
+    var unitIndex = checkUnit.indexOf(unit);
+    var result = spellUnit[unitIndex];
     
     return result;
   };
