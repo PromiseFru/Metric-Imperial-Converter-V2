@@ -24,12 +24,17 @@ module.exports = function (app) {
       var returnUnit = convertHandler.getReturnUnit(initUnit);
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
       
-      res.json({
-        initNum: initNum,
-        initUnit: initUnit,
-        returnNum: returnNum,
-        returnUnit: returnUnit
-      })
+      if(initNum !== 'invalid number' && initUnit !== 'invalid unit') {
+        return res.json({
+          initNum,
+          initUnit,
+          returnNum,
+          returnUnit,
+          string: toString
+        });
+      } else {
+        return res.json({error: initNum === 'invalid number' && initUnit === 'invalid unit' ? initNum + ' and ' + 'unit' : initNum === 'invalid number' ? initNum : initUnit})
+      }
     });
     
 };
