@@ -13,7 +13,7 @@ function ConvertHandler() {
     var result = input.slice(0, firstCharIndex);
     
     if(!result) return result = 1;
-    if(result.match(/\/{2}/)){
+    if(result.match(/\d*\.?\d*\/\d*\.?\d*\/\d*\.?\d*/)){
       return result = 'invalid number';
     }else{
       return eval(result);
