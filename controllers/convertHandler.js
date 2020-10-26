@@ -9,24 +9,14 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
+    var result;
     if(!input) return input = 1;
-    var firstCharIndex = input.match('[a-zA-Z]').index;
-    var result = input.slice(0, firstCharIndex);
-
-    var count = 0;
-    var position = result.indexOf('/');
-
-    while(position !== -1){
-      count ++;
-      position = result.indexOf('/', position + 1);
-    }
-    
-    if(!result) return result = 1;
-    if(count >= 2){
-      return result = 'invalid number';
-    }else{
-      return eval(result);
-    }
+    var unitIndex = input.search('[a-zA-Z]')
+    var num = input.substring(0, unitIndex);
+    if(num.length == 0) num = '1';
+    if(num.split(/\//).length > 2) return result = 'invalid number'
+    result = eval(num);
+    return result;
   };
   
   this.getUnit = function(input) {
