@@ -59,37 +59,37 @@ function ConvertHandler() {
     switch(initUnit){
       case('gal'):{
         var solver = initNum * galToL;
-        var result = solver;
+        var result = Number(solver.toFixed(5));
         return result;
         break;
       }
       case('l'):{
         var solver = initNum / galToL;
-        var result = solver;
+        var result = Number(solver.toFixed(5));
         return result;
         break;
       }
       case('mi'):{
         var solver = initNum * miToKm;
-        var result = solver;
+        var result = Number(solver.toFixed(5));
         return result;
         break;
       }
       case('km'):{
         var solver = initNum / miToKm;
-        var result = solver;
+        var result = Number(solver.toFixed(5));
         return result;
         break;
       }
       case('lbs'):{
         var solver = initNum * lbsToKg;
-        var result = solver;
+        var result = Number(solver.toFixed(5));
         return result;
         break;
       }
       case('kg'):{
         var solver = initNum / lbsToKg;
-        var result = solver;
+        var result = Number(solver.toFixed(5));
         return result;
         break;
       }
