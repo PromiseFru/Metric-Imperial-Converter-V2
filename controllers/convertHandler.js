@@ -11,7 +11,7 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var result;
     if(!input) return input = 1;
-    var unitIndex = input.search('[a-zA-Z]')
+    var unitIndex = input.search('[a-zA-Z]');
     var num = input.substring(0, unitIndex);
     if(num.length == 0) num = '1';
     if(num.split(/\//).length > 2) return result = 'invalid number'
@@ -20,13 +20,16 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
+    var result;
     if(!input) return result = 'no unit'
-    var firstCharIndex = input.match('[a-zA-Z]').index;
-    var result = input.slice(firstCharIndex).toLowerCase();
-    var checkUnit = ['gal','l','mi','km','lbs','kg'];
+    var unitIndex = input.search('[a-zA-Z]');
+    var unit = input.substring(unitIndex, input.length);
+    result = unit.toLowerCase();
+    if(unitIndex == -1) return result = 'no unit';
 
-    var unitIndex = checkUnit.indexOf(result);
-    if(unitIndex >= 0){
+    var units = ['gal','l','mi','km','lbs','kg'];
+    var foundUnit = units.indexOf(result);
+    if(foundUnit >= 0){
       return result;
     }else{
       return result = "invalid unit";
