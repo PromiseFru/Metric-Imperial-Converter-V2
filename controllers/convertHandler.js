@@ -9,6 +9,7 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
+    if(!input) return input = 1;
     var firstCharIndex = input.match('[a-zA-Z]').index;
     var result = input.slice(0, firstCharIndex);
     
@@ -21,6 +22,7 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
+    if(!input) return result = 'no unit'
     var firstCharIndex = input.match('[a-zA-Z]').index;
     var result = input.slice(firstCharIndex).toLowerCase();
     var checkUnit = ['gal','l','mi','km','lbs','kg'];
